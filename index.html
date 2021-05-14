@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Vue</title>
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/captainyouz/vue-firebase-tutorial/master/tutorial-logo.png"
+    />
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+
+      <h2>{{age}}</h2>
+
+      <h2 v-if="isLogin">You are login</h2>
+      <h2 v-else>Not login</h2>
+      <h2 v-show="isLogin">Showing Login content</h2>
+
+      <button @click="toggleLogin">{{loginText}}</button>
+
+      <button @click="increaseAge">Increase</button>
+      <button @click="decreaseAge">Decrease</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
