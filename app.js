@@ -1,30 +1,19 @@
 const app = Vue.createApp({
   data() {
     return {
-      title: 'Vue 3',
-      age: '40',
-      isLogin: false,
+      title: 'Mouse Events',
+      event: true,
     }
   },
 
   methods: {
-    increaseAge() {
-      this.age++
-    },
-
-    decreaseAge() {
-      this.age--
-    },
-
-    toggleLogin() {
-      this.isLogin = !this.isLogin
-    },
+    handleEvent(event){
+      console.log(`You ${event} the box`)
+    }
   },
 
   computed: {
-    loginText() {
-      return this.isLogin ? 'Logout' : 'Login'
-    },
+
   },
 })
 
