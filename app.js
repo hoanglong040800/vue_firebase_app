@@ -1,20 +1,30 @@
 const app = Vue.createApp({
   data() {
     return {
-      title: 'Mouse Events',
-      event: true,
+      title: 'Class Binding',
+      books: [
+        {
+          title: 'Name of the wind',
+          author: 'Partrick Rothfussss',
+          isFav: true,
+        },
+        {
+          title: 'The way of kings',
+          author: 'Brandom Sanderson',
+          isFav: false,
+        },
+        {
+          title: 'The final Empire',
+          author: 'Brandom Sanderson',
+          isFav: false,
+        },
+      ],
     }
   },
 
-  methods: {
-    handleEvent(event){
-      console.log(`You ${event} the box`)
-    }
-  },
+  methods: {},
 
-  computed: {
-
-  },
+  computed: {},
 })
 
 app.mount('#app')

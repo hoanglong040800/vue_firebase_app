@@ -9,7 +9,7 @@
       rel="icon"
       href="https://raw.githubusercontent.com/captainyouz/vue-firebase-tutorial/master/tutorial-logo.png"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@3"></script>
   </head>
 
@@ -17,11 +17,9 @@
     <div id="app">
       <h1>{{title}}</h1>
 
-      <div class="box-container">
-          <h2>Turn on console</h2>
-          <div class="box" @mouseover="handleEvent('hover')">Hover</div>
-          <div class="box" @mouseleave="handleEvent('leave')">Leave</div>
-          <div class="box" @dblclick="handleEvent('double click')">Double Click</div>
+      <div v-for="book in books" :class="{favorite: book.isFav}">
+        <h3>{{book.title}}</h3>
+        <h3>{{book.author}}</h3>
       </div>
     </div>
 
