@@ -22,7 +22,11 @@ const app = Vue.createApp({
     }
   },
 
-  methods: {},
+  methods: {
+    toggleFav(index) {
+      this.books[index].isFav = !this.books[index].isFav
+    },
+  },
 
   computed: {},
 })
