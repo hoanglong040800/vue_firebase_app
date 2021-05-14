@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      title: 'Class Binding',
+      title: 'Computed Properties',
       books: [
         {
           title: 'Name of the wind',
@@ -18,6 +18,11 @@ const app = Vue.createApp({
           author: 'Brandom Sanderson',
           isFav: false,
         },
+        {
+          title: '5 centimet per second',
+          author: 'Someone write this',
+          isFav: true,
+        },
       ],
     }
   },
@@ -28,7 +33,14 @@ const app = Vue.createApp({
     },
   },
 
-  computed: {},
+  computed: {
+    filterdBooks() {
+      return this.books.filter(function (el) {
+        return (el.isFav == true)
+      })
+    },
+  },
+  // 
 })
 
 app.mount('#app')

@@ -17,6 +17,7 @@
     <div id="app">
       <h1>{{title}}</h1>
 
+      <h1>All Books</h1>
       <div v-for="(book, index) in books" :class="{favorite: book.isFav}">
         <h3>{{book.title}}</h3>
         <h3>{{book.author}}</h3>
@@ -25,6 +26,9 @@
         <button v-show="!book.isFav" @click="toggleFav(index)">Add Fav</button>
       </div>
     </div>
+
+    <h2>Filtered Books</h2>
+    <h3>Open Vue devtools</h3>
 
     <script src="app.js"></script>
   </body>
