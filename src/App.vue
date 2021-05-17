@@ -1,6 +1,17 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal :title="modalTitle" :items="modalItems" :theme="modalTheme"/>
+
+  <Modal
+    v-if="showModal"
+    :title="modalTitle"
+    :items="modalItems"
+    :theme="modalTheme"
+    @close-modal="toggleModal"
+  />
+
+  <p>Welcome</p>
+
+  <button @click="toggleModal">Show Modal</button>
 </template>
 
 
@@ -16,6 +27,7 @@ export default {
       modalTitle: "Sign up for the Giveaway",
       modalItems: ["phone", "laptop", "monitor"],
       modalTheme: "dark",
+      showModal: false,
     };
   },
 
@@ -24,6 +36,10 @@ export default {
     Modal,
   },
 
-  methods: {},
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+  },
 };
 </script>
