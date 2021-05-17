@@ -1,13 +1,24 @@
 <template>
   <h1>{{ title }}</h1>
 
-  <Modal
-    v-if="showModal"
-    :title="modalTitle"
-    :items="modalItems"
-    :theme="modalTheme"
-    @close-modal="toggleModal"
-  />
+  <Modal v-if="showModal" @close-modal="toggleModal">
+    <template v-slot:links>
+      <br>
+      <a href="#">Sign Up now</a>
+      <br />
+      <a href="#">More Info</a>
+    </template>
+
+    <!-- <div>
+      <h1>Sign up modal</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        fugiat eos sunt itaque consectetur at sint possimus, alias natus tenetur
+        voluptatem quam nihil soluta, blanditiis earum ab dignissimos atque
+        quod.
+      </p>
+    </div> -->
+  </Modal>
 
   <p>Welcome</p>
 
@@ -27,7 +38,7 @@ export default {
       modalTitle: "Sign up for the Giveaway",
       modalItems: ["phone", "laptop", "monitor"],
       modalTheme: "dark",
-      showModal: false,
+      showModal: true,
     };
   },
 

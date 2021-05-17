@@ -1,18 +1,18 @@
 <template>
-  <div @click="closeModal" class="backdrop fade-in fade-out">
+  <div @click.self="closeModal" class="backdrop fade-in fade-out">
     <div class="modal">
-      <h1 :class="{ darkTheme: theme === 'dark' }">
-        {{ title }}
-      </h1>
+      <!-- default slot -->
+      <slot>Default content for slot</slot>
 
-      <p v-for="(item, index) in items" :key="index">{{ item }}</p>
+      <!-- name slot -->
+      <slot name="links"></slot>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["title", "items", "theme"],
+  props: [],
 
   methods: {
     closeModal() {
@@ -34,8 +34,12 @@ export default {
 
 .modal {
   width: 650px;
+  height: 100px;
   margin: 50px auto;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 10px;
